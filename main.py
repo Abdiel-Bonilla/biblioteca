@@ -15,7 +15,7 @@ def index():
 def libros():
     #conectar con la BD
     conexion= psycopg2.connect(
-        database= "biblioteca3a",
+        database= "Biblioteca3a",
         user="postgres",
         password="cris20",
         host="localhost",
@@ -25,7 +25,7 @@ def libros():
     #crear un cursor (objeto para recorrer las tablas)
     cursor= conexion.cursor()
     #ejecutar una consulta en postgres
-    cursor.execute('''SELECT*FROM libros''')
+    cursor.execute('''SELECT*FROM libro''')
     #recuperar informacion
     datos= cursor.fetchall()
     #cerrar cursor y conexion de la base de datos
