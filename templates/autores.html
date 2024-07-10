@@ -15,22 +15,19 @@
     {% endblock %}
 
     {% block content %}
-
     <table class="table table-hover">
         <tr>
-            <th scope="col">No</th>
-            <th scope="col">Titulo</th>
-            <th scope="col">Nombre del autor</th>
-            <th scope="col">Apellido del autor</th>
-            <th scope="col">Editorial</th>
+            <td scope="col">Id de autor</td>
+            <td scope="col">Nombre del autor</td>
+            <td scope="col">Apellido del autor </td>
+            <td scope="col">Pais de origen</td>
         </tr>
-        {% for fila in datos %}
+        {% for autor in datos %}
         <tr>
-            <td>{{ fila[0] }}</td>
-            <td>{{ fila[1] }}</td>
-            <td>{{ fila[2] }}</td>
-            <td>{{ fila[3] }}</td>
-            <td>{{ fila[4] }}</td>
+            <td>{{ autor[0] }}</td>
+            <td>{{ autor[1] }}</td>
+            <td>{{ autor[2] }}</td>
+            <td>{{ autor[3] }}</td>
         </tr>
         {% endfor %}
     </table>
