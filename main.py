@@ -35,7 +35,7 @@ def libros():
 
 @app.route('/autores')
 def autores():
-     #conectar con la BD
+    #conectar con la BD
     conexion= psycopg2.connect(
         database= "Biblioteca3a",
         user="postgres",
@@ -54,3 +54,25 @@ def autores():
     cursor.close()
     conexion.close()
     return render_template('autores.html', datos=datos)
+
+@app.route('/paises')
+def paises():
+    #conectar con la BD
+    conexion= psycopg2.connect(
+        database= "Biblioteca3a",
+        user="postgres",
+        password="cris20",
+        host="localhost",
+        port="5432"
+    )
+
+    #crear un cursor (objeto para recorrer las tablas)
+    cursor= conexion.cursor()
+    #ejecutar una consulta en postgres
+    cursor.execute('''SELECT*FROM país''')
+    #recuperar informacion
+    datos= cursor.fetchall()
+    #cerrar cursor y conexion de la base de datos
+    cursor.close()
+    conexion.close()
+    return render_template('paises.html', datos=datos)
