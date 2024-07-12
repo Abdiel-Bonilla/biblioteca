@@ -17,7 +17,7 @@
     {% block content %}
     <h2>LISTADO DE PAISES</h2>
       <div class="container-fluid">
-        <table class="table table-hover">
+        <table class="table table-success table-striped">
             <tr>
                 <th scope="col">Id del pais</th>
                 <th scope="col">Pais</th>
@@ -27,8 +27,10 @@
                     <td> {{ pais[0] }} </td>
                     <td> {{ pais[1] }} </td>
                     <td>
-                        <form action="" method="POST">
-                            <button type="submit" class="btn btn-primary">Editar</button>
+                        <form action=" {{ url_for('update1_pais',id_pais=pais[0] ) }} " method="POST">
+                            <button type="submit" class="btn btn-primary">
+                                Editar
+                            </button>
                         </form>
                     </td>
                     <td>

@@ -87,7 +87,6 @@ def delete_pais(id_pais):
         host="localhost",
         port="5432"
     )
-
     #crear un cursor (objeto para recorrer las tablas)
     cursor= conexion.cursor()
     #Borrar el registro con el id_pais seleccionado
@@ -97,3 +96,16 @@ def delete_pais(id_pais):
     cursor.close()
     conexion.close()
     return redirect(url_for('index'))
+
+@app.route('/update1_pais/<int:id_pais>', methods=[ 'GET','POST'])
+def update1_pais(id_pais):
+    #conectar con la BD
+    conexion= psycopg2.connect(
+        database= "Biblioteca3a",
+        user="postgres",
+        password="cris20",
+        host="localhost",
+        port="5432"
+    )
+    #crear un cursor (objeto para recorrer las tablas)
+    cursor= conexion.cursor()
