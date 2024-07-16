@@ -1,0 +1,31 @@
+{% extends 'bootstrap/base.html' %}
+{% block head %}
+    {{ super() }}
+    <title>
+        {% block title %}
+            Biblioteca Web App-Editar pais
+        {% endblock %}
+    </title>
+    <link rel="stylesheet" href="../static/style/style.css">
+{% endblock %}
+
+{% block body %}
+    {% block navbar %}
+        {% include 'navbar.html' %}
+    {% endblock %}
+
+    {% block content %}
+        <div class="container-fluid">
+            <h2>Edicion de paises</h2><br>
+            <form action="" method="post">
+                {% for pais in datos %}
+                    <input type="hidden" name="id" value="{{ pais [0] }}">
+                    <label for="nombre">Nombre del pais</label>
+                    <input type="text" name="nombre" value="{{ pais [1] }}">
+                    <input type="submit" value="actualizar">
+                    <a href="{{url_for('index')}}">Cancelar</a>
+                {% endfor %}
+            </form>
+        </div>
+    {% endblock %}
+{% endblock %}
