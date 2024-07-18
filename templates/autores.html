@@ -17,10 +17,10 @@
     {% block content %}
     <table class="table table-hover">
         <tr>
-            <td scope="col">Id de autor</td>
-            <td scope="col">Nombre del autor</td>
-            <td scope="col">Apellido del autor </td>
-            <td scope="col">Pais de origen</td>
+            <th scope="col">Id de autor</th>
+            <th scope="col">Nombre del autor</th>
+            <th scope="col">Apellido del autor </th>
+            <th scope="col">Pais de origen</th>
         </tr>
         {% for autor in datos %}
         <tr>
@@ -28,6 +28,20 @@
             <td>{{ autor[1] }}</td>
             <td>{{ autor[2] }}</td>
             <td>{{ autor[3] }}</td>
+            <td>
+                <form action=" {{ url_for('update1_autores',id_autor=autor[0] ) }} " method="POST">
+                    <button type="submit" class="btn btn-primary">
+                        Editar
+                    </button>
+                </form>
+            </td>
+            <td>
+                <form action=" {{ url_for('delete_autor',id_autor=autor[0] ) }} " method="POST">
+                    <button type="submit" class="btn btn-danger">
+                        Eliminar
+                    </button>
+                </form>
+            </td>
         </tr>
         {% endfor %}
     </table>

@@ -15,24 +15,26 @@
     {% endblock %}
 
     {% block content %}
-
-    <table class="table table-hover">
-        <tr>
-            <th scope="col">No</th>
-            <th scope="col">Titulo</th>
-            <th scope="col">Nombre del autor</th>
-            <th scope="col">Apellido del autor</th>
-            <th scope="col">Editorial</th>
-        </tr>
-        {% for fila in datos %}
-        <tr>
-            <td>{{ fila[0] }}</td>
-            <td>{{ fila[1] }}</td>
-            <td>{{ fila[2] }}</td>
-            <td>{{ fila[3] }}</td>
-            <td>{{ fila[4] }}</td>
-        </tr>
-        {% endfor %}
-    </table>
+     <div class="container-fluid">
+        <h2>LISTADO DE LIBROS</h2>
+        <table class="table table-hover">
+            <tr>
+                <th scope="col">No</th>
+                <th scope="col">Titulo</th>
+                <th scope="col">Nombre del autor</th>
+                <th scope="col">Apellido del autor</th>
+                <th scope="col">Editorial</th>
+            </tr>
+            {% for fila in datos %}
+            <tr>
+                <td>{{ fila[0] }}</td>
+                <td>{{ fila[1] }}</td>
+                <td>{{ fila[2] }}</td>
+                <td>{{ fila[3] }}</td>
+                <td>{{ fila[4] }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+     </div>
     {% endblock %}
 {% endblock %}
